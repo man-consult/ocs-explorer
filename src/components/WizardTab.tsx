@@ -83,7 +83,7 @@ export function WizardTab({ taxonomy }: WizardTabProps) {
               >
                 <CheckIcon size={16} />
               </div>
-              <span className="text-xs uppercase tracking-widest text-gray-500 font-semibold">
+              <span className="text-xs uppercase tracking-widest text-gray-400 font-semibold">
                 {isActionResult ? 'Recommendation' : 'Suggested Classification'}
               </span>
             </div>
@@ -106,7 +106,7 @@ export function WizardTab({ taxonomy }: WizardTabProps) {
             {/* L1 context */}
             {matchingL1 && (
               <div className="bg-white/5 border border-white/5 rounded px-4 py-3 mb-4">
-                <div className="text-xs text-gray-500 mb-1">
+                <div className="text-xs text-gray-400 mb-1">
                   Level 1 Category
                 </div>
                 <div className="flex items-center gap-2">
@@ -116,7 +116,7 @@ export function WizardTab({ taxonomy }: WizardTabProps) {
                   </span>
                 </div>
                 {matchingL1.description && (
-                  <p className="text-xs text-gray-500 mt-1">
+                  <p className="text-xs text-gray-400 mt-1">
                     {matchingL1.description}
                   </p>
                 )}
@@ -126,7 +126,7 @@ export function WizardTab({ taxonomy }: WizardTabProps) {
             {/* L2 context */}
             {matchingL2 && (
               <div className="bg-white/5 border border-white/5 rounded px-4 py-3 mb-4">
-                <div className="text-xs text-gray-500 mb-1">
+                <div className="text-xs text-gray-400 mb-1">
                   Level 2 Class
                 </div>
                 <div className="flex items-center gap-2">
@@ -162,7 +162,7 @@ export function WizardTab({ taxonomy }: WizardTabProps) {
         <div className="anim-slide-up">
           {/* Progress */}
           <div className="flex items-center gap-2 mb-6">
-            <div className="text-xs text-gray-500">
+            <div className="text-xs text-gray-400">
               Step {history.length + 1}
             </div>
             <div className="flex-1 h-1 bg-white/5 rounded-full overflow-hidden">
@@ -180,7 +180,7 @@ export function WizardTab({ taxonomy }: WizardTabProps) {
             {current.question}
           </h2>
           {current.hint && (
-            <p className="text-sm text-gray-500 mb-6">{current.hint}</p>
+            <p className="text-sm text-gray-400 mb-6">{current.hint}</p>
           )}
 
           {/* Options */}
@@ -194,7 +194,7 @@ export function WizardTab({ taxonomy }: WizardTabProps) {
                 <span>{opt.label}</span>
                 <ArrowRight
                   size={14}
-                  className="text-gray-600 group-hover:text-balestra-red transition-colors flex-shrink-0 ml-3"
+                  className="text-gray-500 group-hover:text-balestra-red transition-colors flex-shrink-0 ml-3"
                 />
               </button>
             ))}
@@ -204,7 +204,7 @@ export function WizardTab({ taxonomy }: WizardTabProps) {
           {history.length > 0 && (
             <button
               onClick={back}
-              className="flex items-center gap-2 mt-4 text-sm text-gray-500 hover:text-white transition-colors"
+              className="flex items-center gap-2 mt-4 text-sm text-gray-400 hover:text-white transition-colors"
             >
               <ArrowLeftIcon size={14} />
               Back

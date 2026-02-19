@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { TabId, TaxonomyVersion } from '../types/taxonomy'
 import { Sidebar } from './Sidebar'
 import {
+  HomeIcon,
   SearchIcon,
   FolderIcon,
   WandIcon,
@@ -12,6 +13,11 @@ import {
 } from './Icons'
 
 const TAB_HEADERS: Record<TabId, { title: string; subtitle: string }> = {
+  home: {
+    title: 'Open Category Standard',
+    subtitle:
+      'A procurement taxonomy built for strategic category management.',
+  },
   search: {
     title: 'Search the Taxonomy',
     subtitle:
@@ -34,6 +40,7 @@ const TAB_HEADERS: Record<TabId, { title: string; subtitle: string }> = {
 }
 
 const MOBILE_NAV: { id: TabId; icon: React.ReactNode }[] = [
+  { id: 'home', icon: <HomeIcon size={18} /> },
   { id: 'search', icon: <SearchIcon size={18} /> },
   { id: 'browse', icon: <FolderIcon size={18} /> },
   { id: 'classify', icon: <WandIcon size={18} /> },
@@ -101,7 +108,7 @@ export function Layout({
                 className={`flex items-center gap-3 w-full px-3 py-2.5 rounded text-sm transition-all ${
                   activeTab === n.id
                     ? 'bg-balestra-red/10 text-white font-medium'
-                    : 'text-gray-400 hover:text-white hover:bg-white/5'
+                    : 'text-gray-300 hover:text-white hover:bg-white/5'
                 }`}
               >
                 {n.icon}
@@ -111,13 +118,13 @@ export function Layout({
             <div className="border-t border-white/10 pt-2 mt-2 flex gap-4">
               <a
                 href="/playbook"
-                className="text-xs text-gray-500 hover:text-gray-300"
+                className="text-xs text-gray-400 hover:text-gray-200"
               >
                 Playbook
               </a>
               <a
                 href="/guide"
-                className="text-xs text-gray-500 hover:text-gray-300"
+                className="text-xs text-gray-400 hover:text-gray-200"
               >
                 User Guide
               </a>
@@ -133,7 +140,7 @@ export function Layout({
           <h1 className="text-xl md:text-[22px] font-serif font-semibold text-white">
             {header.title}
           </h1>
-          <p className="text-[13px] text-gray-500 mt-0.5">{header.subtitle}</p>
+          <p className="text-[13px] text-gray-400 mt-0.5">{header.subtitle}</p>
         </div>
 
         {/* Scrollable content */}
@@ -152,7 +159,7 @@ export function Layout({
               className={`flex-1 flex flex-col items-center gap-1 py-2.5 text-[10px] transition-colors ${
                 activeTab === n.id
                   ? 'text-balestra-red'
-                  : 'text-gray-500 hover:text-gray-300'
+                  : 'text-gray-400 hover:text-gray-200'
               }`}
             >
               {n.icon}

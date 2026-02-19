@@ -30,4 +30,4 @@ export interface TaxonomyData {
   totalItems: number
 }
 
-export type TabId = 'search' | 'browse' | 'classify' | 'guide'
+export type TabId = 'home' | 'search' | 'browse' | 'classify' | 'guide'

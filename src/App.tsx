@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Layout } from './components/Layout'
+import { HomeTab } from './components/HomeTab'
 import { SearchTab } from './components/SearchTab'
 import { BrowseTab } from './components/BrowseTab'
 import { WizardTab } from './components/WizardTab'
@@ -21,11 +22,11 @@ function LoadingSkeleton() {
 function ErrorState({ message }: { message: string }) {
   return (
     <div className="max-w-md mx-auto text-center py-16">
-      <div className="text-4xl text-gray-600 mb-4">!</div>
+      <div className="text-4xl text-gray-500 mb-4">!</div>
       <h2 className="font-serif text-xl text-white mb-2">
         Failed to load taxonomy
       </h2>
-      <p className="text-sm text-gray-500 mb-4">{message}</p>
+      <p className="text-sm text-gray-400 mb-4">{message}</p>
       <button
         onClick={() => window.location.reload()}
         className="text-sm text-balestra-red hover:text-white transition-colors"
@@ -37,13 +38,13 @@ function ErrorState({ message }: { message: string }) {
 }
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<TabId>('search')
+  const [activeTab, setActiveTab] = useState<TabId>('home')
   const { data, loading, error } = useTaxonomy()
 
   // Sync tab with URL hash
   useEffect(() => {
     const hash = window.location.hash.slice(1) as TabId
-    if (['search', 'browse', 'classify', 'guide'].includes(hash)) {
+    if (['home', 'search', 'browse', 'classify', 'guide'].includes(hash)) {
       setActiveTab(hash)
     }
   }, [])
@@ -59,8 +60,11 @@ export default function App() {
       onTabChange={handleTabChange}
       version={data?.version}
     >
-      {loading && <LoadingSkeleton />}
-      {error && <ErrorState message={error} />}
+      {activeTab === 'home' && (
+        <HomeTab taxonomy={data} onTabChange={handleTabChange} />
+      )}
+      {activeTab !== 'home' && loading && <LoadingSkeleton />}
+      {activeTab !== 'home' && error && <ErrorState message={error} />}
       {data && (
         <>
           {activeTab === 'search' && <SearchTab taxonomy={data} />}

@@ -41,17 +41,17 @@ export function L3DetailModal({ item, taxonomy, onClose }: L3DetailModalProps) {
         <div className="flex items-start justify-between px-6 pt-6 pb-4 border-b border-white/10">
           <div className="flex-1 min-w-0 pr-4">
             {/* Breadcrumb */}
-            <div className="flex items-center gap-1.5 text-xs text-gray-500 mb-2 flex-wrap">
+            <div className="flex items-center gap-1.5 text-xs text-gray-400 mb-2 flex-wrap">
               {parentL1 && (
                 <>
                   <span>{parentL1.name}</span>
-                  <span className="text-gray-600">›</span>
+                  <span className="text-gray-500">›</span>
                 </>
               )}
               {parentL2 && (
                 <>
                   <span>{parentL2.name}</span>
-                  <span className="text-gray-600">›</span>
+                  <span className="text-gray-500">›</span>
                 </>
               )}
             </div>
@@ -64,7 +64,7 @@ export function L3DetailModal({ item, taxonomy, onClose }: L3DetailModalProps) {
           </div>
           <button
             onClick={onClose}
-            className="text-gray-500 hover:text-white transition-colors p-1 -mr-1"
+            className="text-gray-400 hover:text-white transition-colors p-1 -mr-1"
           >
             <CloseIcon size={18} />
           </button>
@@ -74,7 +74,7 @@ export function L3DetailModal({ item, taxonomy, onClose }: L3DetailModalProps) {
         <div className="overflow-y-auto px-6 py-5 space-y-5">
           {item.description && (
             <div>
-              <h3 className="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-1.5">
+              <h3 className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-1.5">
                 Description
               </h3>
               <p className="text-sm text-gray-300 leading-relaxed">
@@ -85,7 +85,7 @@ export function L3DetailModal({ item, taxonomy, onClose }: L3DetailModalProps) {
 
           {item.examples && (
             <div>
-              <h3 className="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-1.5">
+              <h3 className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-1.5">
                 Examples
               </h3>
               <p className="text-sm text-gray-300 leading-relaxed">
@@ -96,7 +96,7 @@ export function L3DetailModal({ item, taxonomy, onClose }: L3DetailModalProps) {
 
           {item.keywords && (
             <div>
-              <h3 className="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-2">
+              <h3 className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-2">
                 Keywords
               </h3>
               <div className="flex flex-wrap gap-1.5">
@@ -119,7 +119,7 @@ export function L3DetailModal({ item, taxonomy, onClose }: L3DetailModalProps) {
 
           {item.supply_market_characteristics && (
             <div>
-              <h3 className="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-1.5">
+              <h3 className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-1.5">
                 Supply Market Characteristics
               </h3>
               <p className="text-sm text-gray-300 leading-relaxed">
@@ -130,7 +130,7 @@ export function L3DetailModal({ item, taxonomy, onClose }: L3DetailModalProps) {
 
           {item.strategy_guidance && (
             <div>
-              <h3 className="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-1.5">
+              <h3 className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-1.5">
                 Strategy Guidance
               </h3>
               <p className="text-sm text-gray-300 leading-relaxed">

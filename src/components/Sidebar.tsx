@@ -1,5 +1,6 @@
 import type { TabId, TaxonomyVersion } from '../types/taxonomy'
 import {
+  HomeIcon,
   SearchIcon,
   FolderIcon,
   WandIcon,
@@ -10,6 +11,7 @@ import {
 } from './Icons'
 
 const NAV_ITEMS: { id: TabId; label: string; icon: React.ReactNode }[] = [
+  { id: 'home', label: 'Home', icon: <HomeIcon size={15} /> },
   { id: 'search', label: 'Search', icon: <SearchIcon size={15} /> },
   { id: 'browse', label: 'Browse', icon: <FolderIcon size={15} /> },
   { id: 'classify', label: 'Classify', icon: <WandIcon size={15} /> },
@@ -36,7 +38,7 @@ export function Sidebar({ activeTab, onTabChange, version }: SidebarProps) {
           </span>
         </div>
         {version && (
-          <span className="font-mono text-[11px] text-white/25 tracking-wide">
+          <span className="font-mono text-[11px] text-white/40 tracking-wide">
             v{version.number} — {version.status}
           </span>
         )}
@@ -54,7 +56,7 @@ export function Sidebar({ activeTab, onTabChange, version }: SidebarProps) {
             className={`flex items-center gap-2.5 w-full px-3 py-2.5 rounded text-sm text-left transition-all mb-0.5 ${
               activeTab === n.id
                 ? 'bg-balestra-red/10 text-white font-medium border-l-2 border-balestra-red -ml-px'
-                : 'text-gray-400 hover:text-white hover:bg-white/5'
+                : 'text-gray-300 hover:text-white hover:bg-white/5'
             }`}
           >
             {n.icon}
@@ -70,21 +72,21 @@ export function Sidebar({ activeTab, onTabChange, version }: SidebarProps) {
         </div>
         <a
           href="/playbook"
-          className="flex items-center gap-2.5 w-full px-3 py-2 rounded text-sm text-gray-500 hover:text-gray-300 hover:bg-white/5 transition-all"
+          className="flex items-center gap-2.5 w-full px-3 py-2 rounded text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-all"
         >
           <ExternalLinkIcon size={14} />
           Playbook
         </a>
         <a
           href="/guide"
-          className="flex items-center gap-2.5 w-full px-3 py-2 rounded text-sm text-gray-500 hover:text-gray-300 hover:bg-white/5 transition-all"
+          className="flex items-center gap-2.5 w-full px-3 py-2 rounded text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-all"
         >
           <ExternalLinkIcon size={14} />
           User Guide
         </a>
         <a
           href="https://docs.google.com/spreadsheets/d/1Fa4gWqRxzfVXxF5Mcgri3hGhiRh8fPYv/export?format=xlsx"
-          className="flex items-center gap-2.5 w-full px-3 py-2 rounded text-sm text-gray-500 hover:text-gray-300 hover:bg-white/5 transition-all"
+          className="flex items-center gap-2.5 w-full px-3 py-2 rounded text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-all"
         >
           <DownloadIcon size={14} />
           Download XLSX
@@ -92,7 +94,7 @@ export function Sidebar({ activeTab, onTabChange, version }: SidebarProps) {
       </div>
 
       {/* Footer */}
-      <div className="px-5 py-4 border-t border-white/7 text-[11px] text-white/20 leading-relaxed">
+      <div className="px-5 py-4 border-t border-white/7 text-[11px] text-white/30 leading-relaxed">
         <div>Open Category Standard&trade;</div>
         <div>&copy; 2026 Balestra Group</div>
         <div>CC BY 4.0</div>

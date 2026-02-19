@@ -40,17 +40,17 @@ export function BrowseTab({ taxonomy }: BrowseTabProps) {
       <div className="flex gap-3 mb-6">
         <button
           onClick={expandAll}
-          className="text-xs text-gray-500 hover:text-white bg-white/5 border border-white/5 rounded px-3 py-1.5 transition-all"
+          className="text-xs text-gray-400 hover:text-white bg-white/5 border border-white/5 rounded px-3 py-1.5 transition-all"
         >
           Expand all
         </button>
         <button
           onClick={collapseAll}
-          className="text-xs text-gray-500 hover:text-white bg-white/5 border border-white/5 rounded px-3 py-1.5 transition-all"
+          className="text-xs text-gray-400 hover:text-white bg-white/5 border border-white/5 rounded px-3 py-1.5 transition-all"
         >
           Collapse all
         </button>
-        <span className="text-xs text-gray-600 self-center ml-auto">
+        <span className="text-xs text-gray-500 self-center ml-auto">
           {l1.length} categories &middot; {l2.length} classes &middot;{' '}
           {l3.length} details
         </span>
@@ -73,7 +73,7 @@ export function BrowseTab({ taxonomy }: BrowseTabProps) {
                 onClick={() => toggle(l1Item.code)}
                 className={`w-full flex items-center gap-3 px-4 py-3.5 text-left hover:bg-white/5 transition-all border-l-3 ${borderColor}`}
               >
-                <span className="text-gray-500">
+                <span className="text-gray-400">
                   {l1Expanded ? (
                     <ChevronDown size={14} />
                   ) : (
@@ -84,7 +84,7 @@ export function BrowseTab({ taxonomy }: BrowseTabProps) {
                 <span className="text-sm font-medium text-white flex-1">
                   {l1Item.name}
                 </span>
-                <span className="text-xs text-gray-600">
+                <span className="text-xs text-gray-500">
                   {l2Children.length} classes
                 </span>
               </button>
@@ -104,7 +104,7 @@ export function BrowseTab({ taxonomy }: BrowseTabProps) {
                           onClick={() => toggle(l2Item.code)}
                           className="w-full flex items-center gap-3 pl-10 pr-4 py-2.5 text-left hover:bg-white/5 transition-all"
                         >
-                          <span className="text-gray-600">
+                          <span className="text-gray-500">
                             {l2Expanded ? (
                               <ChevronDown size={13} />
                             ) : (
@@ -115,7 +115,7 @@ export function BrowseTab({ taxonomy }: BrowseTabProps) {
                           <span className="text-sm text-gray-300 flex-1">
                             {l2Item.name}
                           </span>
-                          <span className="text-xs text-gray-600">
+                          <span className="text-xs text-gray-500">
                             {l3Children.length}
                           </span>
                         </button>

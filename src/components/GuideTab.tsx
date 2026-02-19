@@ -97,7 +97,7 @@ export function GuideTab() {
             <p className="text-sm text-gray-400 mb-2">
               Is this component significant enough to manage separately?
             </p>
-            <ul className="list-disc list-inside text-xs text-gray-500 space-y-1 ml-1">
+            <ul className="list-disc list-inside text-xs text-gray-400 space-y-1 ml-1">
               <li>More than 5–10% of total contract value, or more than $10K</li>
               <li>Different lifecycle or refresh requirement</li>
               <li>Would you benchmark it separately?</li>
@@ -113,7 +113,7 @@ export function GuideTab() {
             <p className="text-sm text-gray-400 mb-2">
               Can you actually manage this component separately?
             </p>
-            <ul className="list-disc list-inside text-xs text-gray-500 space-y-1 ml-1">
+            <ul className="list-disc list-inside text-xs text-gray-400 space-y-1 ml-1">
               <li>
                 Incoterms give you control? (EXW, FOB = you; CIF, DDP = seller)
               </li>
@@ -132,7 +132,7 @@ export function GuideTab() {
               Are you managing this separately now, or might you reasonably want
               to?
             </p>
-            <ul className="list-disc list-inside text-xs text-gray-500 space-y-1 ml-1">
+            <ul className="list-disc list-inside text-xs text-gray-400 space-y-1 ml-1">
               <li>Actively managing supplier relationships separately today</li>
               <li>Might want to source separately in future</li>
               <li>Separate data would help future sourcing decisions</li>
@@ -174,7 +174,7 @@ export function GuideTab() {
             },
           ].map((p) => (
             <div key={p.n} className="flex gap-4">
-              <div className="flex-shrink-0 w-7 h-7 rounded bg-white/5 flex items-center justify-center text-xs font-mono text-gray-500">
+              <div className="flex-shrink-0 w-7 h-7 rounded bg-white/5 flex items-center justify-center text-xs font-mono text-gray-400">
                 {p.n}
               </div>
               <div>
