@@ -1,0 +1,44 @@
+{
+  "name": "ocs-explorer",
+  "version": "0.1.0",
+  "description": "OCS Explorer \u2014 Open Category Standard taxonomy browser",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "vite build && wrangler deploy",
+    "seed": "tsx db/seed.ts",
+    "migrate:local": "wrangler d1 migrations apply OCS_DB --local",
+    "migrate:remote": "wrangler d1 migrations apply OCS_DB --remote",
+    "seed:local": "wrangler d1 execute OCS_DB --file=db/seed-data.sql --local",
+    "seed:remote": "wrangler d1 execute OCS_DB --file=db/seed-data.sql --remote"
+  },
+  "dependencies": {
+    "hono": "^4.7.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.0.0",
+    "@cloudflare/workers-types": "^4.20250214.0",
+    "@tailwindcss/postcss": "^4.1.0",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.5.0",
+    "tailwindcss": "^4.1.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.3.0",
+    "wrangler": "^4.61.0",
+    "xlsx": "^0.18.5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp",
+      "workerd"
+    ]
+  }
+}
