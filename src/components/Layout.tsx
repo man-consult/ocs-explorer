@@ -16,7 +16,7 @@ const TAB_HEADERS: Record<TabId, { title: string; subtitle: string }> = {
   home: {
     title: 'Open Category Standard',
     subtitle:
-      'A procurement taxonomy built for strategic category management.',
+      'A taxonomy built for procurement and category management.',
   },
   search: {
     title: 'Search the Taxonomy',

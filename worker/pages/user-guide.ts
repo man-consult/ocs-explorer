@@ -20,7 +20,7 @@ export function renderUserGuide(): string {
 
     <div class="prose">
       <h2>Introduction</h2>
-      <p>OCS is a procurement classification system built for strategic category management. It is not a financial accounting tool.</p>
+      <p>OCS is a procurement classification system built to align with the way spend categories get managed. It is not a financial accounting tool.</p>
       <p>Most taxonomies ask: 'What is it?' OCS asks: <strong>'How are we managing it?'</strong> That shift changes everything. The same physical item belongs in different categories depending on who's buying it, why, and how they're managing the supplier relationship.</p>
       <p>OCS organises spend by three things: supply market characteristics (who your suppliers are and how they compete), strategic intent (how you're managing the relationship), and make/buy boundaries (where you engage the supply market).</p>
 
