@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { TaxonomyData, TaxonomyItem } from '../types/taxonomy'
 import { CodeBadge, getL1BorderColor } from './CodeBadge'
+import { EsgRiskBadge } from './EsgRiskBadge'
 import { ChevronRight, ChevronDown } from './Icons'
 import { L3DetailModal } from './L3DetailModal'
 
@@ -84,6 +85,7 @@ export function BrowseTab({ taxonomy }: BrowseTabProps) {
                 <span className="text-sm font-medium text-white flex-1">
                   {l1Item.name}
                 </span>
+                <EsgRiskBadge risk={l1Item.esg_risk} />
                 <span className="text-xs text-gray-500">
                   {l2Children.length} classes
                 </span>

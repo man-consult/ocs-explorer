@@ -1,5 +1,6 @@
 import type { TaxonomyItem, TaxonomyData } from '../types/taxonomy'
 import { CodeBadge } from './CodeBadge'
+import { EsgRiskBadge } from './EsgRiskBadge'
 
 interface CategoryCardProps {
   item: TaxonomyItem
@@ -33,9 +34,10 @@ export function CategoryCard({
       </div>
       <div className="flex items-center gap-3 mb-2">
         <CodeBadge code={item.code} />
-        <h3 className="text-sm font-medium text-white group-hover:text-balestra-red transition-colors">
+        <h3 className="text-sm font-medium text-white group-hover:text-balestra-red transition-colors flex-1">
           {item.name}
         </h3>
+        <EsgRiskBadge risk={item.esg_risk} />
       </div>
       {item.examples && (
         <p className="text-xs text-gray-400 leading-relaxed line-clamp-2">

@@ -17,6 +17,7 @@ export interface TaxonomyItem {
   examples: string | null
   supply_market_characteristics: string | null
   strategy_guidance: string | null
+  esg_risk: 'high' | 'medium' | 'low' | null
   display_order: number
 }
 

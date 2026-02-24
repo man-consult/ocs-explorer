@@ -16,7 +16,7 @@ app.get('/', async (c) => {
 
   const { results: items } = await db
     .prepare(
-      'SELECT id, code, level, parent_code, name, description, keywords, examples, supply_market_characteristics, strategy_guidance, display_order FROM taxonomy_items WHERE version_id = ? ORDER BY code',
+      'SELECT id, code, level, parent_code, name, description, keywords, examples, supply_market_characteristics, strategy_guidance, display_order, esg_risk FROM taxonomy_items WHERE version_id = ? ORDER BY code',
     )
     .bind(version.id)
     .all()
@@ -64,7 +64,7 @@ app.get('/search', async (c) => {
   const searchTerm = `%${query}%`
   const { results } = await db
     .prepare(
-      `SELECT id, code, level, parent_code, name, description, keywords, examples, supply_market_characteristics, strategy_guidance, display_order
+      `SELECT id, code, level, parent_code, name, description, keywords, examples, supply_market_characteristics, strategy_guidance, display_order, esg_risk
        FROM taxonomy_items
        WHERE version_id = (SELECT id FROM taxonomy_versions WHERE is_latest = 1 LIMIT 1)
          AND (name LIKE ?1 OR keywords LIKE ?1 OR examples LIKE ?1 OR description LIKE ?1 OR code LIKE ?1)

@@ -109,9 +109,22 @@ function main() {
       : null
     const displayOrder = parseInt(String(row['display_order'] ?? '0'), 10) || 0
 
+    // Derive ESG risk from L1 code prefix
+    const l1Prefix = code.substring(0, 2)
+    const HIGH_RISK = ['01', '03', '06', '12', '15']
+    const MEDIUM_RISK = ['02', '05', '08', '11', '13']
+    const LOW_RISK = ['04', '07', '09', '10', '14']
+    const esgRisk = HIGH_RISK.includes(l1Prefix)
+      ? 'high'
+      : MEDIUM_RISK.includes(l1Prefix)
+        ? 'medium'
+        : LOW_RISK.includes(l1Prefix)
+          ? 'low'
+          : null
+
     lines.push(
-      `INSERT INTO taxonomy_items (version_id, code, level, parent_code, name, description, keywords, examples, supply_market_characteristics, strategy_guidance, display_order)` +
-        ` VALUES (1, ${escapeSQL(code)}, ${level}, ${escapeSQL(parentCode)}, ${escapeSQL(name)}, ${escapeSQL(description)}, ${escapeSQL(keywords)}, ${escapeSQL(examples)}, ${escapeSQL(supplyMarket)}, ${escapeSQL(strategyGuidance)}, ${displayOrder});`,
+      `INSERT INTO taxonomy_items (version_id, code, level, parent_code, name, description, keywords, examples, supply_market_characteristics, strategy_guidance, display_order, esg_risk)` +
+        ` VALUES (1, ${escapeSQL(code)}, ${level}, ${escapeSQL(parentCode)}, ${escapeSQL(name)}, ${escapeSQL(description)}, ${escapeSQL(keywords)}, ${escapeSQL(examples)}, ${escapeSQL(supplyMarket)}, ${escapeSQL(strategyGuidance)}, ${displayOrder}, ${escapeSQL(esgRisk)});`,
     )
   }
 

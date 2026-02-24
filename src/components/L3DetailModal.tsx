@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import type { TaxonomyItem, TaxonomyData } from '../types/taxonomy'
 import { CodeBadge } from './CodeBadge'
+import { EsgRiskBadge } from './EsgRiskBadge'
 import { CloseIcon } from './Icons'
 
 interface L3DetailModalProps {
@@ -60,6 +61,9 @@ export function L3DetailModal({ item, taxonomy, onClose }: L3DetailModalProps) {
               <h2 className="text-lg font-serif font-semibold text-white truncate">
                 {item.name}
               </h2>
+            </div>
+            <div className="mt-1.5">
+              <EsgRiskBadge risk={item.esg_risk} />
             </div>
           </div>
           <button
